@@ -13,13 +13,12 @@ async function pageLoaded() {
 
   // 🔥 start here: write code to loop through the rides
 
-  // this is to loop through the 100 rides???
+
   for (let i = 0; i < json.length; i++) {
     let ride = json[i]
     if (ride.length > 1) {
       levelOfService = 'Noober Pool'
-      //noober pool- has multiple legs within a ride - need another loop for pool
-      //each leg in ride- display the data (html)
+    
     } else if (ride[0].purpleRequested) {
       levelOfService = 'Noober Purple'
       let passengerName = `${ride[0].passengerDetails.first} ${ride[0].passengerDetails.last}`
