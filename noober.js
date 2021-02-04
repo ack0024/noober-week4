@@ -16,21 +16,21 @@ async function pageLoaded() {
 
   for (let i = 0; i < json.length; i++) {
     let ride = json[i]
-    
+
     if (ride.length > 1) {
       levelOfService = 'Noober Pool'
       for (let l = 0; l < ride.length; l++) {
         let leg = ride[l]
         console.log(leg)
         let passengerName = `${ride[l].passengerDetails.first} ${ride[l].passengerDetails.last}`
-          let passengerPhone = ride[l].passengerDetails.phoneNumber
-          let passengerNumberOfPassengers = ride[l].numberOfPassengers
-          let passengerPickupAddressLine1 = ride[l].pickupLocation.address
-          let passengerPickupAddressLine2 = `${ride[l].pickupLocation.city}, ${ride[l].pickupLocation.state} ${ride[l].pickupLocation.zip}`
-          let passengerDropoffAddressLine1 = ride[l].dropoffLocation.address
-          let passengerDropoffAddressLine2 = `${ride[l].dropoffLocation.city}, ${ride[l].dropoffLocation.state} ${ride[l].dropoffLocation.zip}`
-    
-          document.querySelector('.rides').insertAdjacentHTML('beforeend',
+        let passengerPhone = ride[l].passengerDetails.phoneNumber
+        let passengerNumberOfPassengers = ride[l].numberOfPassengers
+        let passengerPickupAddressLine1 = ride[l].pickupLocation.address
+        let passengerPickupAddressLine2 = `${ride[l].pickupLocation.city}, ${ride[l].pickupLocation.state} ${ride[l].pickupLocation.zip}`
+        let passengerDropoffAddressLine1 = ride[l].dropoffLocation.address
+        let passengerDropoffAddressLine2 = `${ride[l].dropoffLocation.city}, ${ride[l].dropoffLocation.state} ${ride[l].dropoffLocation.zip}`
+
+        document.querySelector('.rides').insertAdjacentHTML('beforeend',
           `    <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
           <i class="fas fa-car-side"></i>
           <span>${levelOfService}</span>
@@ -90,7 +90,7 @@ async function pageLoaded() {
     `)
       }
 
-    
+
     } else if (ride[0].purpleRequested) {
       levelOfService = 'Noober Purple'
       let passengerName = `${ride[0].passengerDetails.first} ${ride[0].passengerDetails.last}`
@@ -102,7 +102,7 @@ async function pageLoaded() {
       let passengerDropoffAddressLine2 = `${ride[0].dropoffLocation.city}, ${ride[0].dropoffLocation.state} ${ride[0].dropoffLocation.zip}`
 
       document.querySelector('.rides').insertAdjacentHTML('beforeend',
-      `    <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+        `    <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
       <i class="fas fa-car-side"></i>
       <span>${levelOfService}</span>
     </h1>
@@ -145,7 +145,7 @@ async function pageLoaded() {
       let passengerDropoffAddressLine2 = `${ride[0].dropoffLocation.city}, ${ride[0].dropoffLocation.state} ${ride[0].dropoffLocation.zip}`
 
       document.querySelector('.rides').insertAdjacentHTML('beforeend',
-      `    <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+        `    <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
       <i class="fas fa-car-side"></i>
       <span>${levelOfService}</span>
     </h1>
@@ -175,9 +175,9 @@ async function pageLoaded() {
         </div>
       </div>
     </div>`
-    )
+      )
 
-  } else {
+    } else {
       levelOfService = 'Noober X'
       let passengerName = `${ride[0].passengerDetails.first} ${ride[0].passengerDetails.last}`
       let passengerPhone = ride[0].passengerDetails.phoneNumber
